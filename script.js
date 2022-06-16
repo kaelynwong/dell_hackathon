@@ -1,21 +1,40 @@
-const labels = ["January", "February", "March", "April", "May", "June"];
+nv.addGraph(function () {
+  var chart = nv.models.lineChart().useInteractiveGuideline(true);
+  chart.xAxis.axisLabel("Time (ms)").tickFormat(d3.format(",r"));
 
-const data = {
-  labels: labels,
-  datasets: [
-    {
-      label: "My First dataset",
-      backgroundColor: "rgb(255, 99, 132)",
-      borderColor: "rgb(255, 99, 132)",
-      data: [0, 10, 5, 2, 20, 30, 45],
-    },
-  ],
-};
+  chart.yAxis.axisLabel("Voltage (v)").tickFormat(d3.format(".02f"));
 
-const config = {
-  type: "line",
-  data: data,
-  options: {},
-};
+  d3.select("#line-chart svg")
+    .datum(dataLineChart())
+    .transition()
+    .duration(500)
+    .call(chart);
 
-const myChart = new Chart(document.getElementById("myChart"), config);
+  nv.utils.windowResize(chart.update);
+
+  return chart;
+});
+
+nv.addGraph(function () {
+  var chart = nv.models
+    .discreteBarChart()
+    .x(function (d) {
+      return d.label;
+    })
+    .y(function (d) {
+      return d.value;
+    })
+    .staggerLabels(true)
+    .tooltips(false)
+    .showValues(true);
+
+  d3.select("#bar-chart svg")
+    .datum(barChartData)
+    .transition()
+    .duration(500)
+    .call(chart);
+
+  nv.utils.windowResize(chart.update);
+
+  return chart;
+});
