@@ -1,40 +1,45 @@
-nv.addGraph(function () {
-  var chart = nv.models.lineChart().useInteractiveGuideline(true);
-  chart.xAxis.axisLabel("Time (ms)").tickFormat(d3.format(",r"));
+function random_rgba() {
+  var o = Math.round,
+    r = Math.random,
+    s = 255;
+  return "rgba(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + ")";
+}
 
-  chart.yAxis.axisLabel("Voltage (v)").tickFormat(d3.format(".02f"));
+//Graph 1: The lifespan of the products
+//Get the labels
+const graph1Labels = [1, 2, 3, 4, 5];
+const graph1Dataset = { datasets: [] };
 
-  d3.select("#line-chart svg")
-    .datum(dataLineChart())
-    .transition()
-    .duration(500)
-    .call(chart);
+for (let prod in dellData.products) {
+  const currProd = dellData.products[prod];
 
-  nv.utils.windowResize(chart.update);
+  // console.log(currProd);
 
-  return chart;
-});
+  const lifespanData = [];
+  const currProdLifespanData = currProd.lifespan;
+  for (let year in currProdLifespanData) {
+    lifespanData.push(currProdLifespanData[year]);
+  }
 
-nv.addGraph(function () {
-  var chart = nv.models
-    .discreteBarChart()
-    .x(function (d) {
-      return d.label;
-    })
-    .y(function (d) {
-      return d.value;
-    })
-    .staggerLabels(true)
-    .tooltips(false)
-    .showValues(true);
+  let entry = {
+    label: prod.toUpperCase(),
+    data: lifespanData,
+    tension: 0.5,
+    borderColor: random_rgba(),
+  };
+  graph1Dataset.datasets.push(entry);
+}
 
-  d3.select("#bar-chart svg")
-    .datum(barChartData)
-    .transition()
-    .duration(500)
-    .call(chart);
+graph1Dataset.labels = graph1Labels;
 
-  nv.utils.windowResize(chart.update);
+const graph1Data = {
+  type: "line",
+  // labels: graph1Labels,
+  data: graph1Dataset,
+};
+console.log(graph1Data);
 
-  return chart;
-});
+const ctx1 = document.getElementById("myChart1").getContext("2d");
+const myChart1 = new Chart(ctx1, graph1Data);
+//Get the dataset
+

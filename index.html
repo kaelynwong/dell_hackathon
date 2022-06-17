@@ -4,29 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="style.css" />
-
-    <script src="nvd3/d3v3.js"></script>
-    <script src="nvd3/nvd3.js"></script>
-    <link rel="stylesheet" href="nvd3/nvd3.css" />
-
+    <title>Testing</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="data.js"></script>
-    <script src="script.js"></script>
-
-    <title>Dashboard prototype</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <img src="resources/dell_logo.png" alt="" />
     </header>
-    <div class="graphs-body">
-      <div id="line-chart">
-        <svg></svg>
-      </div>
-      <div id="bar-chart">
-        <svg></svg>
-      </div>
+    <div>
+      <canvas id="myChart1"></canvas>
     </div>
   </body>
+  <script src="script.js" defer></script>
 </html>
