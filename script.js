@@ -13,8 +13,6 @@ const graph1Dataset = { datasets: [] };
 for (let prod in dellData.products) {
   const currProd = dellData.products[prod];
 
-  // console.log(currProd);
-
   const lifespanData = [];
   const currProdLifespanData = currProd.lifespan;
   for (let year in currProdLifespanData) {
@@ -34,12 +32,46 @@ graph1Dataset.labels = graph1Labels;
 
 const graph1Data = {
   type: "line",
-  // labels: graph1Labels,
   data: graph1Dataset,
+  options: {
+    onClick(e) {
+      const points = overallLifespanChart.getElementsAtEventForMode(
+        e,
+        "nearest",
+        { intersect: true },
+        false
+      );
+      // console.log("Click handler");
+
+      if (points.length) {
+        // console.log("Inside handler");
+        const firstPoint = points[0];
+        const label = overallLifespanChart.data.labels[firstPoint.index];
+        const value =
+          overallLifespanChart.data.datasets[firstPoint.datasetIndex].data[
+            firstPoint.index
+          ];
+        console.log(firstPoint, label, value);
+        console.log(
+          overallLifespanChart.data.datasets[firstPoint.datasetIndex]
+        );
+        // console.log(myChart1.config.type);
+        myChart.config.type = "bar";
+        myChart.update();
+      }
+    },
+  },
 };
-console.log(graph1Data);
 
-const ctx1 = document.getElementById("myChart1").getContext("2d");
-const myChart1 = new Chart(ctx1, graph1Data);
-//Get the dataset
+const overallLifespanChartDomEl = document.getElementById(
+  "overall-lifespan-chart"
+);
+const overallLifespanChart = new Chart(overallLifespanChartDomEl, graph1Data);
+// Get the dataset
 
+const testData = graphDataGenerator(
+  "bar",
+  dellData.products.lattitude.productLifespan,
+  "testname",
+  ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"]
+);
