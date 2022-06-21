@@ -1,15 +1,7 @@
-function random_rgba() {
-  var o = Math.round,
-    r = Math.random,
-    s = 255;
-  return "rgba(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + ")";
-}
-
 const overallLifespanChartDomEl = document.getElementById(
   "overall-lifespan-chart"
 );
 
-let testProduct = null;
 //Graph 1: The lifespan of the products
 //Get the labels
 const graph1Labels = [1, 2, 3, 4, 5];
@@ -28,7 +20,7 @@ for (let prod in dellData.products) {
     label: prod.toUpperCase(),
     data: lifespanData,
     tension: 0.5,
-    borderColor: random_rgba(),
+    borderColor: random_rgb(),
   };
   graph1Dataset.datasets.push(entry);
 }
@@ -105,6 +97,7 @@ const graph1Data = {
             "2021",
           ]
         );
+        console.log(proportionRecycledConfig);
         const proportionRecycledChart = new Chart(
           proportionrecycledDomEl,
           proportionRecycledConfig

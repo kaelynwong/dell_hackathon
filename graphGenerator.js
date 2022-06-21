@@ -2,30 +2,42 @@
 //Type of graph, options(?), data
 //
 
-function random_rgba() {
-  var o = Math.round,
-    r = Math.random,
-    s = 255;
-  return "rgba(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + ")";
-}
-
 const graphDataGenerator = function (graphTypeInput, jsonData, axisLabels) {
   const configData = { labels: axisLabels, datasets: [] };
 
-  // const graphName = graphName;
-  for (let dataEntry in jsonData) {
-    const dataPoints = [];
-    // labels.push(dataEntry);
-    for (let dataPoint in jsonData[dataEntry]) {
-      dataPoints.push(jsonData[dataEntry][dataPoint]);
+  if (graphTypeInput == "bar") {
+    const colors = [];
+    const colorGenerated = random_rgb();
+
+    for (let dataEntry in jsonData) {
+      const dataPoints = [];
+
+      for (let dataPoint in jsonData[dataEntry]) {
+        dataPoints.push(jsonData[dataEntry][dataPoint]);
+        colors.push(colorGenerated);
+      }
+      const newEntry = {
+        label: dataEntry,
+        data: dataPoints,
+        backgroundColor: colors,
+      };
+      configData.datasets.push(newEntry);
     }
-    // console.log(dataEntry);
-    const newEntry = {
-      label: dataEntry,
-      data: dataPoints,
-      borderColor: random_rgba(),
-    };
-    configData.datasets.push(newEntry);
+  } else {
+    //This will be line charts
+    for (let dataEntry in jsonData) {
+      const dataPoints = [];
+
+      for (let dataPoint in jsonData[dataEntry]) {
+        dataPoints.push(jsonData[dataEntry][dataPoint]);
+      }
+      const newEntry = {
+        label: dataEntry,
+        data: dataPoints,
+        borderColor: random_rgb(),
+      };
+      configData.datasets.push(newEntry);
+    }
   }
 
   const toReturn = {
