@@ -9,12 +9,7 @@ function random_rgba() {
   return "rgba(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + ")";
 }
 
-const graphDataGenerator = function (
-  graphTypeInput,
-  jsonData,
-  graphName,
-  axisLabels
-) {
+const graphDataGenerator = function (graphTypeInput, jsonData, axisLabels) {
   const configData = { labels: axisLabels, datasets: [] };
 
   // const graphName = graphName;

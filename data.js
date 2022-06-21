@@ -68,8 +68,8 @@ const dellData = {
       demographics: {
         gender: {
           "% Recycled by Gender": {
-            percentMale: 50,
-            percentFemale: 50,
+            percentMale: 27,
+            percentFemale: 73,
           },
         },
         region: {
@@ -141,24 +141,26 @@ const dellData = {
       },
       percentageRecycled: 50,
       proportionRecycled: {
-        2010: 10,
-        2011: 12,
-        2012: 15,
-        2013: 17,
-        2014: 22,
-        2015: 23,
-        2016: 25,
-        2017: 30,
-        2018: 31,
-        2019: 32,
-        2020: 33,
-        2021: 34,
+        "Proportion Recycled": {
+          2010: 10,
+          2011: 12,
+          2012: 15,
+          2013: 17,
+          2014: 22,
+          2015: 23,
+          2016: 25,
+          2017: 30,
+          2018: 31,
+          2019: 32,
+          2020: 33,
+          2021: 34,
+        },
       },
       demographics: {
         gender: {
           "% Recycled by Gender": {
-            percentMale: 50,
-            percentFemale: 50,
+            percentMale: 40,
+            percentFemale: 60,
           },
         },
         region: {
@@ -230,24 +232,26 @@ const dellData = {
       },
       percentageRecycled: 50,
       proportionRecycled: {
-        2010: 10,
-        2011: 12,
-        2012: 15,
-        2013: 17,
-        2014: 22,
-        2015: 23,
-        2016: 25,
-        2017: 30,
-        2018: 31,
-        2019: 32,
-        2020: 33,
-        2021: 34,
+        "Proportion Recycled": {
+          2010: 10,
+          2011: 12,
+          2012: 15,
+          2013: 17,
+          2014: 22,
+          2015: 23,
+          2016: 25,
+          2017: 30,
+          2018: 31,
+          2019: 32,
+          2020: 33,
+          2021: 34,
+        },
       },
       demographics: {
         gender: {
           "% Recycled by Gender": {
-            percentMale: 50,
-            percentFemale: 50,
+            percentMale: 30,
+            percentFemale: 70,
           },
         },
         region: {
