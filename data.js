@@ -4,6 +4,7 @@ const dellData = {
       lifespan: {
         // labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
         // datapoints: [12, 6, 4, 2, 1],
+
         yearOne: 12,
         yearTwo: 6,
         yearThree: 4,
@@ -49,46 +50,57 @@ const dellData = {
       },
       percentageRecycled: 50,
       proportionRecycled: {
-        2010: 10,
-        2011: 12,
-        2012: 15,
-        2013: 17,
-        2014: 22,
-        2015: 23,
-        2016: 25,
-        2017: 30,
-        2018: 31,
-        2019: 32,
-        2020: 33,
-        2021: 34,
+        "Proportion Recycled": {
+          2010: 10,
+          2011: 12,
+          2012: 15,
+          2013: 17,
+          2014: 22,
+          2015: 23,
+          2016: 25,
+          2017: 30,
+          2018: 31,
+          2019: 32,
+          2020: 33,
+          2021: 34,
+        },
       },
       demographics: {
         gender: {
-          percentMale: 50,
-          percentFemale: 50,
+          "% Recycled by Gender": {
+            percentMale: 50,
+            percentFemale: 50,
+          },
         },
         region: {
-          EMEA: 80,
-          DAO: 52,
-          APJ: 75,
+          "% Recycled by Region": {
+            EMEA: 80,
+            DAO: 52,
+            APJ: 75,
+          },
         },
         age: {
-          below16: 80,
-          from16to20: 54,
-          from21to30: 86,
-          from31to40: 76,
-          from41to50: 54,
-          above50: 37,
+          "% Recycled by Age": {
+            below16: 80,
+            from16to20: 54,
+            from21to30: 86,
+            from31to40: 76,
+            from41to50: 54,
+            above50: 37,
+          },
         },
       },
     },
     inspiron: {
       lifespan: {
-        yearOne: 11,
-        yearTwo: 5,
-        yearThree: 3,
-        yearFour: 2,
-        yearFive: 1,
+        // labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
+        // datapoints: [12, 6, 4, 2, 1],
+
+        yearOne: 18,
+        yearTwo: 9,
+        yearThree: 7,
+        yearFour: 5,
+        yearFive: 2,
       },
       productLifespan: {
         modelA: {
@@ -144,31 +156,40 @@ const dellData = {
       },
       demographics: {
         gender: {
-          percentMale: 50,
-          percentFemale: 50,
+          "% Recycled by Gender": {
+            percentMale: 50,
+            percentFemale: 50,
+          },
         },
         region: {
-          EMEA: 80,
-          DAO: 52,
-          APJ: 75,
+          "% Recycled by Region": {
+            EMEA: 80,
+            DAO: 52,
+            APJ: 75,
+          },
         },
         age: {
-          below16: 80,
-          from16to20: 54,
-          from21to30: 86,
-          from31to40: 76,
-          from41to50: 54,
-          above50: 37,
+          "% Recycled by Age": {
+            below16: 80,
+            from16to20: 54,
+            from21to30: 86,
+            from31to40: 76,
+            from41to50: 54,
+            above50: 37,
+          },
         },
       },
     },
     xps: {
       lifespan: {
-        yearOne: 11,
-        yearTwo: 7,
-        yearThree: 4,
-        yearFour: 3,
-        yearFive: 1,
+        // labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
+        // datapoints: [12, 6, 4, 2, 1],
+
+        yearOne: 18,
+        yearTwo: 15,
+        yearThree: 13,
+        yearFour: 8,
+        yearFive: 5,
       },
       productLifespan: {
         modelA: {
@@ -224,21 +245,27 @@ const dellData = {
       },
       demographics: {
         gender: {
-          percentMale: 50,
-          percentFemale: 50,
+          "% Recycled by Gender": {
+            percentMale: 50,
+            percentFemale: 50,
+          },
         },
         region: {
-          EMEA: 80,
-          DAO: 52,
-          APJ: 75,
+          "% Recycled by Region": {
+            EMEA: 80,
+            DAO: 52,
+            APJ: 75,
+          },
         },
         age: {
-          below16: 80,
-          from16to20: 54,
-          from21to30: 86,
-          from31to40: 76,
-          from41to50: 54,
-          above50: 37,
+          "% Recycled by Age": {
+            below16: 80,
+            from16to20: 54,
+            from21to30: 86,
+            from31to40: 76,
+            from41to50: 54,
+            above50: 37,
+          },
         },
       },
     },

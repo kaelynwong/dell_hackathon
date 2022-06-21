@@ -56,12 +56,14 @@ const graph1Data = {
           overallLifespanChart.data.datasets[firstPoint.datasetIndex]
         );
         // console.log(myChart1.config.type);
-        myChart.config.type = "bar";
-        myChart.update();
+        // myChart.config.type = "bar";
+        // myChart.update();
       }
     },
   },
 };
+
+// const graph1Config = graphDataGenerator("line");
 
 const overallLifespanChartDomEl = document.getElementById(
   "overall-lifespan-chart"
@@ -69,9 +71,22 @@ const overallLifespanChartDomEl = document.getElementById(
 const overallLifespanChart = new Chart(overallLifespanChartDomEl, graph1Data);
 // Get the dataset
 
-const testData = graphDataGenerator(
-  "bar",
-  dellData.products.lattitude.productLifespan,
-  "testname",
-  ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"]
-);
+// const testData = graphDataGenerator(
+//   "bar",
+//   dellData.products.lattitude.productLifespan,
+//   "testname",
+//   ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"]
+// );
+
+const generateGraph = function () {
+  const testConfig = graphDataGenerator(
+    "line",
+    dellData.products.lattitude.demographics.region,
+    "testname",
+    ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"]
+  );
+  const testEl = document.getElementById("product-lifespan-chart");
+  const testGraph = new Chart(testEl, testConfig);
+};
+
+generateGraph();
