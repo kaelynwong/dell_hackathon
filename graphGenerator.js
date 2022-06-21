@@ -1,7 +1,3 @@
-//Arguemnts:
-//Type of graph, options(?), data
-//
-
 const graphDataGenerator = function (graphTypeInput, jsonData, axisLabels) {
   const configData = { labels: axisLabels, datasets: [] };
 

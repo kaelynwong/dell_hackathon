@@ -28,8 +28,10 @@ header img {
   background-color: white;
   /* height: 200px;
   width: 400px; */
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.103);
+  display: flex;
+  align-items: center;
 }
 
 .card1 {
@@ -49,4 +51,8 @@ header img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* grid-template-rows: 1; */
+}
+
+.long-card div {
+  margin: 10px;
 }

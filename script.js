@@ -38,8 +38,17 @@ const graph1Data = {
         { intersect: true },
         false
       );
-
+      let existingGraphs = false;
+      console.log(existingGraphs);
       if (points.length) {
+        if (existingGraphs) {
+          console.log("GRAPHS EXISTS!");
+          productLifespanChart.destroy();
+          proportionRecycledChart.destroy();
+          recycledGenderChart.destroy();
+          recycledRegionChart.destroy();
+          recycledAgeChart.destroy();
+        }
         const firstPoint = points[0];
         const label = overallLifespanChart.data.labels[firstPoint.index];
         const value =
@@ -52,7 +61,7 @@ const graph1Data = {
             firstPoint.datasetIndex
           ].label.toLowerCase();
         const productSelectedData = dellData.products[productSelected];
-        console.log(productSelectedData);
+        // console.log(productSelectedData);
 
         const productLifeSpanDomEl = document.getElementById(
           "product-lifespan-chart"
@@ -132,6 +141,9 @@ const graph1Data = {
           recycledAgeChartDomEl,
           recycledAgeConfig
         );
+        console.log("Created graphs");
+        existingGraphs = true;
+        console.log(existingGraphs);
       }
     },
   },
