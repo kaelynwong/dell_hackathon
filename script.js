@@ -46,20 +46,15 @@ const graph1Data = {
         { intersect: true },
         false
       );
-      // console.log("Click handler");
 
       if (points.length) {
-        // console.log("Inside handler");
         const firstPoint = points[0];
         const label = overallLifespanChart.data.labels[firstPoint.index];
         const value =
           overallLifespanChart.data.datasets[firstPoint.datasetIndex].data[
             firstPoint.index
           ];
-        // console.log(firstPoint, label, value);
-        // console.log(
-        //   overallLifespanChart.data.datasets[firstPoint.datasetIndex].label
-        // );
+
         const productSelected =
           overallLifespanChart.data.datasets[
             firstPoint.datasetIndex
@@ -150,26 +145,3 @@ const graph1Data = {
 };
 
 const overallLifespanChart = new Chart(overallLifespanChartDomEl, graph1Data);
-
-// const graph1Config = graphDataGenerator("line");
-
-// Get the dataset
-
-// const testData = graphDataGenerator(
-//   "bar",
-//   dellData.products.lattitude.productLifespan,
-//   "testname",
-//   ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"]
-// );
-
-// const generateGraph = function () {
-//   const testConfig = graphDataGenerator(
-//     "line",
-//     dellData.products.lattitude.demographics.region,
-//     ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"]
-//   );
-//   const testEl = document.getElementById("product-lifespan-chart");
-//   const testGraph = new Chart(testEl, testConfig);
-// };
-
-// generateGraph();
