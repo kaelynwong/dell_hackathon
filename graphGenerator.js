@@ -1,4 +1,9 @@
-const graphDataGenerator = function (graphTypeInput, jsonData, axisLabels) {
+const graphDataGenerator = function (
+  graphTypeInput,
+  jsonData,
+  axisLabels,
+  stacked = false
+) {
   const configData = { labels: axisLabels, datasets: [] };
 
   if (graphTypeInput == "bar") {
@@ -41,5 +46,16 @@ const graphDataGenerator = function (graphTypeInput, jsonData, axisLabels) {
     data: configData,
     options: {},
   };
+
+  if (stacked == true) {
+    toReturn.options.scales = {
+      x: {
+        stacked: true,
+      },
+      y: {
+        stacked: true,
+      },
+    };
+  }
   return toReturn;
 };
