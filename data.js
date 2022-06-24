@@ -177,6 +177,11 @@ const dellData = {
         yearThree: 4,
         yearFour: 2,
         yearFive: 1,
+        // yearSix: 3,
+        // yearSeven: 4,
+        // yearEight: 3,
+        // yearNine: 2,
+        // yearTen: 10,
       },
       productLifespan: {
         "Lattitude 5530": {
@@ -325,7 +330,7 @@ const dellData = {
       },
       percentageRecycled: 50,
       proportionRecycled: {
-        "Proportion Recycled": {
+        "Amount Recycled": {
           2010: 10,
           2011: 12,
           2012: 15,
@@ -339,12 +344,30 @@ const dellData = {
           2020: 33,
           2021: 34,
         },
+        "Amount Discarded": {
+          2010: 1,
+          2011: 2,
+          2012: 5,
+          2013: 7,
+          2014: 2,
+          2015: 3,
+          2016: 5,
+          2017: 3,
+          2018: 1,
+          2019: 3,
+          2020: 3,
+          2021: 4,
+        },
       },
       demographics: {
         gender: {
           "% Recycled by Gender": {
-            percentMale: 40,
-            percentFemale: 60,
+            percentMale: 27,
+            percentFemale: 73,
+          },
+          "% Discarded by Gender": {
+            percentMale: 73,
+            percentFemale: 27,
           },
         },
         region: {
@@ -352,6 +375,11 @@ const dellData = {
             EMEA: 80,
             DAO: 52,
             APJ: 75,
+          },
+          "% Discarded by Region": {
+            EMEA: 20,
+            DAO: 48,
+            APJ: 25,
           },
         },
         age: {
@@ -362,6 +390,14 @@ const dellData = {
             from31to40: 76,
             from41to50: 54,
             above50: 37,
+          },
+          "% Decarded by Age": {
+            below16: 20,
+            from16to20: 46,
+            from21to30: 14,
+            from31to40: 24,
+            from41to50: 46,
+            above50: 63,
           },
         },
       },
@@ -416,7 +452,7 @@ const dellData = {
       },
       percentageRecycled: 50,
       proportionRecycled: {
-        "Proportion Recycled": {
+        "Amount Recycled": {
           2010: 10,
           2011: 12,
           2012: 15,
@@ -430,12 +466,30 @@ const dellData = {
           2020: 33,
           2021: 34,
         },
+        "Amount Discarded": {
+          2010: 1,
+          2011: 2,
+          2012: 5,
+          2013: 7,
+          2014: 2,
+          2015: 3,
+          2016: 5,
+          2017: 3,
+          2018: 1,
+          2019: 3,
+          2020: 3,
+          2021: 4,
+        },
       },
       demographics: {
         gender: {
           "% Recycled by Gender": {
-            percentMale: 30,
-            percentFemale: 70,
+            percentMale: 27,
+            percentFemale: 73,
+          },
+          "% Discarded by Gender": {
+            percentMale: 73,
+            percentFemale: 27,
           },
         },
         region: {
@@ -443,6 +497,11 @@ const dellData = {
             EMEA: 80,
             DAO: 52,
             APJ: 75,
+          },
+          "% Discarded by Region": {
+            EMEA: 20,
+            DAO: 48,
+            APJ: 25,
           },
         },
         age: {
@@ -453,6 +512,14 @@ const dellData = {
             from31to40: 76,
             from41to50: 54,
             above50: 37,
+          },
+          "% Decarded by Age": {
+            below16: 20,
+            from16to20: 46,
+            from21to30: 14,
+            from31to40: 24,
+            from41to50: 46,
+            above50: 63,
           },
         },
       },

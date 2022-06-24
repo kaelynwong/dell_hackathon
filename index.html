@@ -15,24 +15,30 @@
       <h1>Dell Product Recycled Dashboard</h1>
     </header>
     <div class="graph-body">
-      <div class="graph-card card1">
+      <div class="graph-card card1 graph-container">
+        <!-- <h2>Product Line Lifespan</h2> -->
         <canvas id="overall-lifespan-chart"></canvas>
       </div>
-      <div class="graph-card card2">
+      <div class="graph-card card2 graph-container">
+        <!-- <h2>Product Lifespan</h2> -->
         <canvas id="product-lifespan-chart"></canvas>
       </div>
 
-      <div class="graph-card card3">
+      <div class="graph-card card3 graph-container">
+        <!-- <h2>Proportion discarded/recycled</h2> -->
         <canvas id="proportion-recycled-chart"></canvas>
       </div>
       <div class="graph-card long-card">
-        <div>
+        <div class="graph-container">
+          <!-- <h2>Demographics: Gender</h2> -->
           <canvas id="recycled-gender-chart"></canvas>
         </div>
-        <div>
+        <div graph="graph-container">
+          <!-- <h2>Demographics: Region</h2> -->
           <canvas id="recycled-region-chart"></canvas>
         </div>
-        <div>
+        <div graph="graph-container">
+          <!-- <h2>Demographics: Age</h2> -->
           <canvas id="recycled-age-chart"></canvas>
         </div>
       </div>

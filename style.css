@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   background-color: darkgrey;
+  color: #325896;
 }
 
 header {
@@ -16,7 +17,7 @@ header img {
 .graph-body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 300px 300px;
+  grid-template-rows: repeat(3, 1fr);
   gap: 10px;
   grid-template-areas:
     "card1 card2 card3"

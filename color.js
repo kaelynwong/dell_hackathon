@@ -12,9 +12,36 @@ const dellColors = [
 
 const barChartColors = ["#58427B", "#325896"];
 
-const xpsProductColor = "";
-const xpsColors = [];
-const lattitudeProductColor = "";
-const lattitudeColors = [];
-const inspironProductColor = "";
-const inspironColors = [];
+const xpsProductColor = "#0075ba";
+const xpsColors = ["#005e95", "#004670", "#3391c8", "#003b5d", "#4d9ecf"];
+const lattitudeProductColor = "#000000";
+const lattitudeColors = ["#1a1a1a", "#333333", "#4d4d4d", "#666666", "#808080"];
+const inspironProductColor = "#58427B";
+const inspironColors = ["#796895", "#3e2e56", "#35284a"];
+const productColors = [
+  lattitudeProductColor,
+  inspironProductColor,
+  xpsProductColor,
+];
+
+const allProductColors = [
+  "#1a1a1a",
+  "#333333",
+  "#4d4d4d",
+  "#666666",
+  "#808080",
+  "#796895",
+  "#3e2e56",
+  "#35284a",
+  "#005e95",
+  "#004670",
+  "#3391c8",
+  "#003b5d",
+  "#4d9ecf",
+];
+const productLineColors = [
+  lattitudeColors,
+  inspironColors,
+  xpsColors,
+  allProductColors,
+];
