@@ -16,38 +16,38 @@ const recycledRegionChartDomEl = document.getElementById(
 const recycledAgeChartDomEl = document.getElementById("recycled-age-chart");
 
 //================Generate the all products lifespan graph==========================
-const productLifeSpanConfig = graphDataGenerator(
+let productLifeSpanConfig = graphDataGenerator(
   "line",
   dellData.overallData.productLifespan,
   overallLifespanAxis
 );
-const productLifespanChart = new Chart(
+let productLifespanChart = new Chart(
   productLifeSpanDomEl,
   productLifeSpanConfig
 );
 
 //================Generate the proportion recycled graph==========================
 // proportionrecycledDomEl;
-const proportionRecycledConfig = graphDataGenerator(
+let proportionRecycledConfig = graphDataGenerator(
   "bar",
   dellData.overallData.proportionRecycled,
   proportionRecycledAxis,
   true
 );
 // console.log(proportionRecycledConfig);
-const proportionRecycledChart = new Chart(
+let proportionRecycledChart = new Chart(
   proportionrecycledDomEl,
   proportionRecycledConfig
 );
 //================Generate the demographics: gender graph==========================
 // recycledGenderChartDomEl;
-const recycledGenderConfig = graphDataGenerator(
+let recycledGenderConfig = graphDataGenerator(
   "bar",
   dellData.overallData.demographics.gender,
   recycledGenderAxis,
   true
 );
-const recycledGenderChart = new Chart(
+let recycledGenderChart = new Chart(
   recycledGenderChartDomEl,
   recycledGenderConfig
 );
@@ -55,25 +55,25 @@ const recycledGenderChart = new Chart(
 //================Generate the demographics: region graph==========================
 // recycledRegionChartDomEl;
 
-const recycledRegionConfig = graphDataGenerator(
+let recycledRegionConfig = graphDataGenerator(
   "bar",
   dellData.overallData.demographics.region,
   recycledRegionAxis,
   true
 );
-const recycledRegionChart = new Chart(
+let recycledRegionChart = new Chart(
   recycledRegionChartDomEl,
   recycledRegionConfig
 );
 //================Generate the demographics: age graph==========================
 // recycledAgeChartDomEl;
-const recycledAgeConfig = graphDataGenerator(
+let recycledAgeConfig = graphDataGenerator(
   "bar",
   dellData.overallData.demographics.age,
   recycledAgeAxis,
   true
 );
-const recycledAgeChart = new Chart(recycledAgeChartDomEl, recycledAgeConfig);
+let recycledAgeChart = new Chart(recycledAgeChartDomEl, recycledAgeConfig);
 
 //================Generate the first graph==========================
 //Graph 1: The lifespan of the products
@@ -112,17 +112,17 @@ const graph1Data = {
         { intersect: true },
         false
       );
-      let existingGraphs = false;
-      console.log(existingGraphs);
+      // let existingGraphs = false;
+      // console.log(existingGraphs);
       if (points.length) {
-        if (existingGraphs) {
-          console.log("GRAPHS EXISTS!");
-          productLifespanChart.destroy();
-          proportionRecycledChart.destroy();
-          recycledGenderChart.destroy();
-          recycledRegionChart.destroy();
-          recycledAgeChart.destroy();
-        }
+        // if (existingGraphs) {
+        //   console.log("GRAPHS EXISTS!");
+        //   productLifespanChart.destroy();
+        //   proportionRecycledChart.destroy();
+        //   recycledGenderChart.destroy();
+        //   recycledRegionChart.destroy();
+        //   recycledAgeChart.destroy();
+        // }
         const firstPoint = points[0];
         const label = overallLifespanChart.data.labels[firstPoint.index];
         const value =
@@ -136,60 +136,62 @@ const graph1Data = {
             firstPoint.datasetIndex
           ].label.toLowerCase();
         const productSelectedData = dellData.products[productSelected];
-
+        // console.log(productSelectedData.productLifespan);
         //TODO: Change all these graphs into
-        // const productLifeSpanConfig = graphDataGenerator(
-        //   "line",
-        //   productSelectedData.productLifespan,
-        //   overallLifespanAxis
-        // );
-        // const productLifespanChart = new Chart(
-        //   productLifeSpanDomEl,
-        //   productLifeSpanConfig
-        // );
 
-        // const proportionRecycledConfig = graphDataGenerator(
-        //   "bar",
-        //   productSelectedData.proportionRecycled,
-        //   proportionRecycledAxis
-        // );
-        // console.log(proportionRecycledConfig);
-        // const proportionRecycledChart = new Chart(
-        //   proportionrecycledDomEl,
-        //   proportionRecycledConfig
-        // );
+        productLifespanChart.destroy();
+        productLifeSpanConfig = graphDataGenerator(
+          "line",
+          productSelectedData.productLifespan,
+          overallLifespanAxis
+        );
+        productLifespanChart = new Chart(
+          productLifeSpanDomEl,
+          productLifeSpanConfig
+        );
 
-        // const recycledGenderConfig = graphDataGenerator(
-        //   "bar",
-        //   productSelectedData.demographics.gender,
-        //   recycledGenderAxis
-        // );
-        // const recycledGenderChart = new Chart(
-        //   recycledGenderChartDomEl,
-        //   recycledGenderConfig
-        // );
+        proportionRecycledChart.destroy();
+        proportionRecycledConfig = graphDataGenerator(
+          "bar",
+          productSelectedData.proportionRecycled,
+          proportionRecycledAxis
+        );
+        proportionRecycledChart = new Chart(
+          proportionrecycledDomEl,
+          proportionRecycledConfig
+        );
 
-        // const recycledRegionConfig = graphDataGenerator(
-        //   "bar",
-        //   productSelectedData.demographics.region,
-        //   recycledRegionAxis
-        // );
-        // const recycledRegionChart = new Chart(
-        //   recycledRegionChartDomEl,
-        //   recycledRegionConfig
-        // );
+        recycledGenderChart.destroy();
+        recycledGenderConfig = graphDataGenerator(
+          "bar",
+          productSelectedData.demographics.gender,
+          recycledGenderAxis
+        );
+        recycledGenderChart = new Chart(
+          recycledGenderChartDomEl,
+          recycledGenderConfig
+        );
 
-        // const recycledAgeConfig = graphDataGenerator(
-        //   "bar",
-        //   productSelectedData.demographics.age,
-        //   recycledAgeAxis
-        // );
-        // const recycledAgeChart = new Chart(
-        //   recycledAgeChartDomEl,
-        //   recycledAgeConfig
-        // );
+        recycledRegionChart.destroy();
+        recycledRegionConfig = graphDataGenerator(
+          "bar",
+          productSelectedData.demographics.region,
+          recycledRegionAxis
+        );
+        recycledRegionChart = new Chart(
+          recycledRegionChartDomEl,
+          recycledRegionConfig
+        );
+
+        recycledAgeChart.destroy();
+        recycledAgeConfig = graphDataGenerator(
+          "bar",
+          productSelectedData.demographics.age,
+          recycledAgeAxis
+        );
+        recycledAgeChart = new Chart(recycledAgeChartDomEl, recycledAgeConfig);
         // console.log("Created graphs");
-        existingGraphs = true;
+        // existingGraphs = true;
         // console.log(existingGraphs);
       }
     },

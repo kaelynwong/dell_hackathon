@@ -9,3 +9,12 @@ const dellColors = [
   "#002f4a",
   "#002338",
 ];
+
+const barChartColors = ["#58427B", "#325896"];
+
+const xpsProductColor = "";
+const xpsColors = [];
+const lattitudeProductColor = "";
+const lattitudeColors = [];
+const inspironProductColor = "";
+const inspironColors = [];
