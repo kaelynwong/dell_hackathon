@@ -97,7 +97,7 @@ const graphDataGenerator = function (
     };
   }
 
-  console.log(graphScales);
+  // console.log(graphScales);
   const toReturn = {
     type: graphTypeInput,
     data: configData,
@@ -127,6 +127,6 @@ const graphDataGenerator = function (
   //   display: true,
   // };
 
-  console.log(toReturn);
+  // console.log(toReturn);
   return toReturn;
 };

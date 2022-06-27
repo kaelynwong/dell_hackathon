@@ -120,7 +120,13 @@ const graph1Data = {
     scales: {
       y: {
         title: {
-          text: "Test",
+          text: overallLifespanGraphLabels[1],
+          display: true,
+        },
+      },
+      x: {
+        title: {
+          text: overallLifespanGraphLabels[0],
           display: true,
         },
       },
@@ -149,8 +155,30 @@ const graph1Data = {
           ].label.toLowerCase();
         // console.log(productSelected);
 
+        //This function aims to change the other colors to grey and also update the chosen graph to its color
+        for (let dataset in graph1Dataset.datasets) {
+          // console.log(graph1Dataset.datasets[dataset]);
+          let x = graph1Dataset.datasets[dataset];
+          console.log(x);
+          if (x.label != productSelected.toUpperCase()) {
+            x.borderColor = "#a9a9a9";
+            x.backgroundColor = "#a9a9a9";
+          } else {
+            if (productSelected == "lattitude") {
+              x.borderColor = productColors[0];
+              x.backgroundColor = productColors[0];
+            } else if (productSelected == "inspiron") {
+              x.borderColor = productColors[1];
+              x.backgroundColor = productColors[1];
+            } else {
+              x.borderColor = productColors[2];
+              x.backgroundColor = productColors[2];
+            }
+          }
+        }
+        overallLifespanChart.update();
+
         const productSelectedData = dellData.products[productSelected];
-        //TODO: Change all these graphs into
 
         productLifespanChart.destroy();
         productLifeSpanConfig = graphDataGenerator(

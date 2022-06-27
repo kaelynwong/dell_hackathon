@@ -6,9 +6,7 @@
 https://thewebdev.info/2021/06/26/how-to-handle-click-events-on-charts-in-chart-js/
 
 TODO:
-Update the charts such that they consist of an aggregated values first then filter them out
 
-- First of all is to figure out how to create stacked charts
-
-- change color from purple to light blue
 - add focus on graph
+  - This will mean that I want to dim the other graphs
+- Come out with data
