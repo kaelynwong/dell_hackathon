@@ -88,7 +88,7 @@ let recycledAgeChart = new Chart(recycledAgeChartDomEl, recycledAgeConfig);
 //================Generate the first graph==========================
 //Graph 1: The lifespan of the products
 //Get the labels
-const graph1Labels = [1, 2, 3, 4, 5];
+const graph1Labels = overallLifespanAxis;
 const graph1Dataset = { datasets: [] };
 let index = 0;
 for (let prod in dellData.products) {

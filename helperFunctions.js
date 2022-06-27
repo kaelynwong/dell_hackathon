@@ -5,7 +5,7 @@ function random_rgb() {
   return "rgba(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + ")";
 }
 
-const overallLifespanAxis = ["1", "2", "3", "4", "5"];
+const overallLifespanAxis = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 const productLIfespanAxis = overallLifespanAxis;
 const proportionRecycledAxis = [
   "2010",
