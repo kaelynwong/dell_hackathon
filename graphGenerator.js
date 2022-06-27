@@ -1,12 +1,16 @@
 const graphDataGenerator = function (
+  graphLegendBool,
   graphTypeInput,
   jsonData,
-  axisLabels,
+  axesLabels,
+  xAxisLabels,
   stacked = false,
   productLine
 ) {
   // console.log(productLine);
-  const configData = { labels: axisLabels, datasets: [] };
+  // console.log(axesLabels);
+  const configData = { labels: xAxisLabels, datasets: [] };
+  let graphScales = {};
   if (graphTypeInput == "bar") {
     const colors = [];
     // const colorGenerated = random_rgb();
@@ -28,6 +32,21 @@ const graphDataGenerator = function (
       configData.datasets.push(newEntry);
       index += 1;
     }
+
+    graphScales.x = {
+      stacked: true,
+      title: {
+        display: true,
+        text: axesLabels[0],
+      },
+    };
+    graphScales.y = {
+      stacked: true,
+      title: {
+        display: true,
+        text: axesLabels[1],
+      },
+    };
   } else {
     //This will be line charts
     let productIndex;
@@ -56,28 +75,58 @@ const graphDataGenerator = function (
         label: dataEntry,
         data: dataPoints,
         borderColor: productLineColors[productIndex][index],
+        backgroundColor: productLineColors[productIndex][index],
         tension: 0.5,
       };
       configData.datasets.push(newEntry);
       index += 1;
     }
-  }
 
-  const toReturn = {
-    type: graphTypeInput,
-    data: configData,
-    options: { responsive: true },
-  };
-
-  if (stacked == true) {
-    toReturn.options.scales = {
-      x: {
-        stacked: true,
+    // let graphScales = {};
+    graphScales.x = {
+      title: {
+        display: true,
+        text: axesLabels[0],
       },
-      y: {
-        stacked: true,
+    };
+    graphScales.y = {
+      title: {
+        display: true,
+        text: axesLabels[1],
       },
     };
   }
+
+  console.log(graphScales);
+  const toReturn = {
+    type: graphTypeInput,
+    data: configData,
+    options: {
+      scales: graphScales,
+      responsive: true,
+      plugins: {
+        legend: {
+          display: graphLegendBool,
+        },
+      },
+    },
+  };
+
+  // if (stacked == true) {
+  //   toReturn.options.scales.x = { stacked: true };
+  //   toReturn.options.scales.y = { stacked: true };
+  // }
+  // console.log(toReturn);
+
+  // toReturn.options.scales.y.title = {
+  //   text: axesLabels[1],
+  //   display: true,
+  // };
+  // toReturn.options.scales.x.title = {
+  //   text: axesLabels[0],
+  //   display: true,
+  // };
+
+  console.log(toReturn);
   return toReturn;
 };

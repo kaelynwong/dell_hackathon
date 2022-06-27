@@ -17,8 +17,10 @@ const recycledAgeChartDomEl = document.getElementById("recycled-age-chart");
 
 //================Generate the all products lifespan graph==========================
 let productLifeSpanConfig = graphDataGenerator(
+  false,
   "line",
   dellData.overallData.productLifespan,
+  productLifespanGraphLabels,
   overallLifespanAxis
 );
 let productLifespanChart = new Chart(
@@ -29,8 +31,10 @@ let productLifespanChart = new Chart(
 //================Generate the proportion recycled graph==========================
 // proportionrecycledDomEl;
 let proportionRecycledConfig = graphDataGenerator(
+  true,
   "bar",
   dellData.overallData.proportionRecycled,
+  proportionRecycledGraphLabels,
   proportionRecycledAxis,
   true
 );
@@ -42,8 +46,10 @@ let proportionRecycledChart = new Chart(
 //================Generate the demographics: gender graph==========================
 // recycledGenderChartDomEl;
 let recycledGenderConfig = graphDataGenerator(
+  true,
   "bar",
   dellData.overallData.demographics.gender,
+  recycledGenderGraphLabels,
   recycledGenderAxis,
   true
 );
@@ -56,8 +62,10 @@ let recycledGenderChart = new Chart(
 // recycledRegionChartDomEl;
 
 let recycledRegionConfig = graphDataGenerator(
+  true,
   "bar",
   dellData.overallData.demographics.region,
+  recycledRegionGraphLabels,
   recycledRegionAxis,
   true
 );
@@ -68,8 +76,10 @@ let recycledRegionChart = new Chart(
 //================Generate the demographics: age graph==========================
 // recycledAgeChartDomEl;
 let recycledAgeConfig = graphDataGenerator(
+  true,
   "bar",
   dellData.overallData.demographics.age,
+  recycledAgeGraphLabels,
   recycledAgeAxis,
   true
 );
@@ -95,6 +105,7 @@ for (let prod in dellData.products) {
     data: lifespanData,
     tension: 0.5,
     borderColor: productColors[index],
+    backgroundColor: productColors[index],
   };
   graph1Dataset.datasets.push(entry);
   index += 1;
@@ -106,6 +117,14 @@ const graph1Data = {
   type: "line",
   data: graph1Dataset,
   options: {
+    scales: {
+      y: {
+        title: {
+          text: "Test",
+          display: true,
+        },
+      },
+    },
     responsive: true,
     maintainAspectRatio: false,
     onClick(e) {
@@ -135,8 +154,10 @@ const graph1Data = {
 
         productLifespanChart.destroy();
         productLifeSpanConfig = graphDataGenerator(
+          false,
           "line",
           productSelectedData.productLifespan,
+          productLifespanGraphLabels,
           overallLifespanAxis,
           false,
           productSelected
@@ -148,8 +169,10 @@ const graph1Data = {
 
         proportionRecycledChart.destroy();
         proportionRecycledConfig = graphDataGenerator(
+          true,
           "bar",
           productSelectedData.proportionRecycled,
+          proportionRecycledGraphLabels,
           proportionRecycledAxis,
           true
         );
@@ -160,8 +183,10 @@ const graph1Data = {
 
         recycledGenderChart.destroy();
         recycledGenderConfig = graphDataGenerator(
+          true,
           "bar",
           productSelectedData.demographics.gender,
+          recycledGenderGraphLabels,
           recycledGenderAxis,
           true
         );
@@ -172,8 +197,10 @@ const graph1Data = {
 
         recycledRegionChart.destroy();
         recycledRegionConfig = graphDataGenerator(
+          true,
           "bar",
           productSelectedData.demographics.region,
+          recycledRegionGraphLabels,
           recycledRegionAxis,
           true
         );
@@ -184,8 +211,10 @@ const graph1Data = {
 
         recycledAgeChart.destroy();
         recycledAgeConfig = graphDataGenerator(
+          true,
           "bar",
           productSelectedData.demographics.age,
+          recycledAgeGraphLabels,
           recycledAgeAxis,
           true
         );

@@ -5,7 +5,7 @@ function random_rgb() {
   return "rgba(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + ")";
 }
 
-const overallLifespanAxis = ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"];
+const overallLifespanAxis = ["1", "2", "3", "4", "5"];
 const productLIfespanAxis = overallLifespanAxis;
 const proportionRecycledAxis = [
   "2010",
@@ -31,3 +31,16 @@ const recycledAgeAxis = [
   "Above 50",
 ];
 const recycledRegionAxis = ["EMEA", "DAO", "APJ"];
+
+const overallLifespanGraphLabels = [
+  "Number of years product owned",
+  "Frequency",
+];
+const productLifespanGraphLabels = [
+  "Number of years product owned",
+  "Frequency",
+];
+const proportionRecycledGraphLabels = ["Year", "No. of products (millions)"];
+const recycledGenderGraphLabels = ["Gender", "Amount Recycled/Discarded (%)"];
+const recycledAgeGraphLabels = ["Age Range", "Amount Recycled/Discarded (%)"];
+const recycledRegionGraphLabels = ["Region", "Amount Recycled/Discarded (%)"];

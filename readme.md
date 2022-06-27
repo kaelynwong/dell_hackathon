@@ -9,3 +9,6 @@ TODO:
 Update the charts such that they consist of an aggregated values first then filter them out
 
 - First of all is to figure out how to create stacked charts
+
+- change color from purple to light blue
+- add focus on graph
