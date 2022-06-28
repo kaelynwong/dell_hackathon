@@ -76,7 +76,7 @@ const graphDataGenerator = function (
         data: dataPoints,
         borderColor: productLineColors[productIndex][index],
         backgroundColor: productLineColors[productIndex][index],
-        tension: 0.5,
+        tension: 0.4,
       };
       configData.datasets.push(newEntry);
       index += 1;
