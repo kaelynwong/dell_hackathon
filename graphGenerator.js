@@ -76,7 +76,7 @@ const graphDataGenerator = function (
         data: dataPoints,
         borderColor: productLineColors[productIndex][index],
         backgroundColor: productLineColors[productIndex][index],
-        tension: 0.4,
+        lineTension: 0.4,
       };
       configData.datasets.push(newEntry);
       index += 1;
@@ -112,21 +112,5 @@ const graphDataGenerator = function (
     },
   };
 
-  // if (stacked == true) {
-  //   toReturn.options.scales.x = { stacked: true };
-  //   toReturn.options.scales.y = { stacked: true };
-  // }
-  // console.log(toReturn);
-
-  // toReturn.options.scales.y.title = {
-  //   text: axesLabels[1],
-  //   display: true,
-  // };
-  // toReturn.options.scales.x.title = {
-  //   text: axesLabels[0],
-  //   display: true,
-  // };
-
-  // console.log(toReturn);
   return toReturn;
 };

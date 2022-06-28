@@ -103,7 +103,7 @@ for (let prod in dellData.products) {
   let entry = {
     label: prod.toUpperCase(),
     data: lifespanData,
-    tension: 0.4,
+    lineTension: 0.4,
     borderColor: productColors[index],
     backgroundColor: productColors[index],
   };
