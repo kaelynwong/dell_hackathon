@@ -222,7 +222,7 @@ const dellData = {
         },
         "% Decarded by Age": {
           below16: 83,
-          from16to20: 36,
+          from16to20: 46,
           from21to30: 55,
           from31to40: 72,
           from41to50: 62,

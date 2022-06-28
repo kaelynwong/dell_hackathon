@@ -34,13 +34,16 @@ const recycledRegionAxis = ["EMEA", "DAO", "APJ"];
 
 const overallLifespanGraphLabels = [
   "Number of years product owned",
-  "Frequency",
+  "Frequency (%)",
 ];
 const productLifespanGraphLabels = [
   "Number of years product owned",
-  "Frequency",
+  "Frequency (%)",
 ];
-const proportionRecycledGraphLabels = ["Year", "No. of products (millions)"];
+const proportionRecycledGraphLabels = [
+  "Year at which products are predicted to fail",
+  "No. of products (10 thousands)",
+];
 const recycledGenderGraphLabels = ["Gender", "Amount Recycled/Discarded (%)"];
 const recycledAgeGraphLabels = ["Age Range", "Amount Recycled/Discarded (%)"];
 const recycledRegionGraphLabels = ["Region", "Amount Recycled/Discarded (%)"];
