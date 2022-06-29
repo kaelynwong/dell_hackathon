@@ -10,7 +10,8 @@ const dellColors = [
   "#002338",
 ];
 
-const barChartColors = ["#0075ba", "#325896"];
+// const barChartColors = ["#0075ba", "#325896"];
+const barChartColors = ["#00447C", "#0075ba"];
 
 const xpsProductColor = "#0075ba";
 const xpsColors = ["#005e95", "#004670", "#3391c8", "#003b5d", "#4d9ecf"];
