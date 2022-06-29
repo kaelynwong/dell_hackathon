@@ -35,6 +35,11 @@ header img {
   padding: 10px;
 }
 
+.graph-card h2 {
+  margin: 0px;
+  font-size: 16px;
+}
+
 .graph-card {
   padding: 15px;
   background-color: white;
@@ -43,7 +48,13 @@ header img {
   border-radius: 5px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.103);
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+.card1 canvas {
+  height: 215px;
+  width: 459px;
 }
 
 .card1 {

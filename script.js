@@ -131,8 +131,8 @@ const graph1Data = {
         },
       },
     },
-    responsive: true,
-    maintainAspectRatio: false,
+    // responsive: true,
+    // maintainAspectRatio: false,
     onClick(e) {
       const points = overallLifespanChart.getElementsAtEventForMode(
         e,
