@@ -48,7 +48,7 @@ header img {
   border-radius: 5px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.103);
   display: flex;
-  /* align-items: center; */
+  align-items: space-evenly;
   flex-direction: column;
 }
 
